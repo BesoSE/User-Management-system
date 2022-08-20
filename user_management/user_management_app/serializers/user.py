@@ -18,7 +18,20 @@ class UserSerializer(serializers.ModelSerializer):
         return instance
 
 
-class UserSerializers(serializers.ModelSerializer):
+class UserEditSerializer(serializers.Serializer):
+    first_name = serializers.CharField(max_length=50, required=False)
+    last_name = serializers.CharField(max_length=50, required=False)
+    email = serializers.EmailField(required=False)
+    status = serializers.BooleanField(required=False)
+
+    def validate(self, attrs):
+        if attrs.get("email", None):
+            if User.objects.filter(email=attrs.get("email", None)).exists():
+                attrs.pop("email")
+                raise serializers.ValidationError({"User with this email already exists."})
+
+        return attrs
+
     class Meta:
         model = User
-        fields = '__all__'
+
