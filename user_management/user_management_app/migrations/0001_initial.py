@@ -54,9 +54,4 @@ class Migration(migrations.Migration):
             name='permissions',
             field=models.ManyToManyField(related_name='permissions', through='user_management_app.UserPermissions', to='user_management_app.permission'),
         ),
-        migrations.AddField(
-            model_name='user',
-            name='user_permissions',
-            field=models.ManyToManyField(blank=True, help_text='Specific permissions for this user.', related_name='user_set', related_query_name='user', to='auth.permission', verbose_name='user permissions'),
-        ),
     ]

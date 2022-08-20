@@ -1,6 +1,7 @@
 from rest_framework import serializers
 
 from user_management_app.models import User
+from user_management_app.models import UserPermissions
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -8,7 +9,7 @@ class UserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = '__all__'
+        exclude = ['permissions']
 
     def create(self, validated_data):
         instance = self.Meta.model(**validated_data)
@@ -34,4 +35,19 @@ class UserEditSerializer(serializers.Serializer):
 
     class Meta:
         model = User
+
+
+class UserPermissionSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = UserPermissions
+        fields = '__all__'
+
+    def to_representation(self, obj):
+        data = super(UserPermissionSerializer, self).to_representation(obj)
+        data['first_name'] = obj.user.first_name
+        data['last_name'] = obj.user.last_name
+        data['code'] = obj.permission.code
+        data['description'] = obj.permission.description
+        return data
 
