@@ -1,7 +1,7 @@
 import Router from "next/router";
 import style from '../styles/User.module.css'
 
-const UserTable = ({data, users, setShowModal, sort}) => {
+const UserTable = ({data, users, handleShow, sort, setUserId}) => {
 
     return (
         <table className="table table-striped">
@@ -36,7 +36,7 @@ const UserTable = ({data, users, setShowModal, sort}) => {
                                     Router.push(`/edituser/${user.id}`)
                                 }}>Edit
                                 </button>
-                                <button onClick={() => setShowModal(user.id)} className="btn btn-danger m-2">Delete</button>
+                                <button onClick={() => {handleShow(); setUserId(user.id)}} className="btn btn-danger m-2">Delete</button>
                                 <button className="btn btn-dark m-2" onClick={() => {
                                     Router.push(`/assignpermissions/${user.id}`)
                                 }}>Assign

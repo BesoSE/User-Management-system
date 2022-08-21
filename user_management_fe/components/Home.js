@@ -10,20 +10,24 @@ const Home = () => {
     const [users, setUsers] = useState([]);
     const [users_filter, setUsersFilter] = useState([]);
     const [data, setData] = useState([]);
-    const [showModal, setShowModal] = useState(null);
+    const [showModal, setShowModal] = useState(false);
     const [count, setCount] = useState(0)
     const [limit, setLimit] = useState(0)
     const [offset, setOffset] = useState(0)
+    const [user_id, setUserId] = useState(null)
     const [ordering, setOrdering] = useState(true)
     const [statuses, setStatuses] = useState(["true", "false"])
     const [filter, setFilter] = useState('')
+
+    const handleClose = () => setShowModal(false);
+    const handleShow = () => setShowModal(true);
 
     const deleteUser = async (id) => {
         await userAPI().deleteUser(id);
         setUsers(users.filter(item => {
             return item.id !== id
         }));
-        setShowModal(null)
+        handleClose();
 
     }
 
@@ -75,7 +79,7 @@ const Home = () => {
 
     return (
         <div className="container" style={{marginTop: '10vh', marginBottom: '10vh'}}>
-            <Modal showModal={showModal} setShowModal={setShowModal} deleteUser={deleteUser}/>
+            <Modal showModal={showModal} handleShow={handleShow} deleteUser={deleteUser} handleClose={handleClose} user_id={user_id}/>
             <div className="form-group" style={{display: 'flex', justifyContent: 'space-between', marginTop: '3vh'}}>
                 <button className="btn btn-primary" onClick={() => {
                     Router.push("/createuser")
@@ -83,7 +87,7 @@ const Home = () => {
                 </button>
                 <Filters filtering={filtering} users_filter={users_filter} statuses={statuses}/>
             </div>
-            <UserTable users={users} data={data} setShowModal={setShowModal} sort={sort}/>
+            <UserTable users={users} data={data} handleShow={handleShow} sort={sort} setUserId={setUserId}/>
             <Pagination limit={limit} pagination={pagination} count={count} offset={offset} />
 
         </div>

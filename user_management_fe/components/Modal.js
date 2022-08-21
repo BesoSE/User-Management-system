@@ -1,29 +1,24 @@
-const Modal = ({showModal, setShowModal, deleteUser}) => {
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
+
+
+const ModalComp = ({showModal, handleShow, handleClose, deleteUser, user_id}) => {
+
     return (
-        <>
-            {showModal != null ? (
-                <div style={{display:'flex', justifyContent: 'center'}}>
-                    <div style={{border:'1px solid black', width:'40%', padding:'3%', marginBottom:'5%'}}>
-                        <div className="modal-dialog">
-                            <div className="modal-content">
-                                <div className="modal-header">
-                                    <h5 className="modal-title">Are you sure you want to delete this user?</h5>
-
-                                </div>
-
-                                <div className="modal-footer">
-                                    <button onClick={(e) => setShowModal(null)} type="button" className="btn btn-secondary" data-bs-dismiss="modal">No
-                                    </button>
-                                    <button onClick={(e) => deleteUser(showModal)} type="button" className="btn btn-primary m-2">Yes</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            ) : null}
-        </>
-    )
+            <Modal show={showModal} onHide={handleClose}>
+                <Modal.Header closeButton>
+                    <Modal.Title>Delete user</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>Are you sure you want to delete this user?</Modal.Body>
+                <Modal.Footer>
+                    <Button variant="secondary" onClick={handleClose}>
+                        No
+                    </Button>
+                    <Button variant="primary" onClick={(e) => {deleteUser(user_id);}}>
+                        Yes
+                    </Button>
+                </Modal.Footer>
+            </Modal>
+    );
 }
-
-
-export default Modal
+export default ModalComp
