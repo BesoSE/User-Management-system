@@ -1,6 +1,7 @@
 import Router from "next/router";
+import style from '../styles/User.module.css'
 
-const UserTable = ({data, users, setShowModal}) => {
+const UserTable = ({data, users, setShowModal, sort}) => {
 
     return (
         <table className="table table-striped">
@@ -8,11 +9,15 @@ const UserTable = ({data, users, setShowModal}) => {
 
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">First name</th>
+                <th scope="col"><a id={style.sort} onClick={(e) => {
+                    sort('first_name')
+                }}>First name</a></th>
                 <th scope="col">Last name</th>
                 <th scope="col">Username</th>
                 <th scope="col">Email</th>
-                <th scope="col">Status</th>
+                <th scope="col"><a id={style.sort} onClick={(e) => {
+                    sort('status')
+                }}>Status</a></th>
                 <th scope="col">Actions</th>
             </tr>
             </thead>
@@ -27,9 +32,15 @@ const UserTable = ({data, users, setShowModal}) => {
                             <td>{user.email}</td>
                             <td>{user.status.toString()}</td>
                             <td>
-                                <button className="btn btn-primary m-2" onClick={()=>{Router.push(`/edituser/${user.id}`)}}>Edit</button>
-                                <button onClick={() => setShowModal(user.id)}  className="btn btn-danger m-2" >Delete</button>
-                                <button className="btn btn-dark m-2" onClick={()=>{Router.push(`/assignpermissions/${user.id}`)}}>Assign</button>
+                                <button className="btn btn-primary m-2" onClick={() => {
+                                    Router.push(`/edituser/${user.id}`)
+                                }}>Edit
+                                </button>
+                                <button onClick={() => setShowModal(user.id)} className="btn btn-danger m-2">Delete</button>
+                                <button className="btn btn-dark m-2" onClick={() => {
+                                    Router.push(`/assignpermissions/${user.id}`)
+                                }}>Assign
+                                </button>
                             </td>
 
                         </tr>

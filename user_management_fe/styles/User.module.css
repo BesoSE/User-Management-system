@@ -1,0 +1,9 @@
+#sort{
+    border-bottom: 1px solid black;
+
+}
+#sort:hover{
+    cursor:pointer;
+    color: blue;
+    border-bottom-color: blue;
+}

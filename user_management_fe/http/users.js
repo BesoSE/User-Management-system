@@ -2,8 +2,8 @@ import {getApiClient} from "./utils";
 
 export default function userAPI() {
     return {
-        getUsers: async () =>
-            getApiClient().get('/api/users/'),
+        getUsers: async (limit, offset, sorting='', filtering='') =>
+            getApiClient().get(`/api/users/?limit=${limit}&offset=${offset}${sorting}${filtering}`),
         deleteUser: async (id) =>
             getApiClient().delete(`/api/user/${id}`),
         createUser: async (first_name, last_name, email, password, username) =>
