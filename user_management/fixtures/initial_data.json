@@ -1,0 +1,245 @@
+[
+  {
+    "model": "user_management_app.permission",
+    "pk": 1,
+    "fields": {
+      "code": "create",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+    }
+  },
+  {
+    "model": "user_management_app.permission",
+    "pk": 2,
+    "fields": {
+      "code": "update",
+      "description": "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
+    }
+  },
+  {
+    "model": "user_management_app.permission",
+    "pk": 3,
+    "fields": {
+      "code": "delete",
+      "description": "It was popularised in the 1960s with the release of Letraset sheets"
+    }
+  },
+  {
+    "model": "user_management_app.userpermissions",
+    "pk": 1,
+    "fields": {
+      "user": 3,
+      "permission": 1
+    }
+  },
+  {
+    "model": "user_management_app.userpermissions",
+    "pk": 2,
+    "fields": {
+      "user": 6,
+      "permission": 2
+    }
+  },
+  {
+    "model": "user_management_app.userpermissions",
+    "pk": 3,
+    "fields": {
+      "user": 10,
+      "permission": 3
+    }
+  },
+  {
+    "model": "user_management_app.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$390000$EdlawPBDm1oxmba4sSsVsI$+HtBAjAmTAwp8QHnmbB2fH6ioO1GatDE0KhBwtcf4CA=",
+      "last_login": null,
+      "first_name": "Ajla",
+      "last_name": "Garanovic",
+      "username": "ajla",
+      "email": "ajla@mail.com",
+      "status": true
+    }
+  },
+  {
+    "model": "user_management_app.user",
+    "pk": 2,
+    "fields": {
+      "password": "pbkdf2_sha256$390000$Pqw7qUF2T2VNkSntyUB3ZF$Mkm1A0+p+xj3aDOd93LP1WYcFRZHctBXVdtaqs14dpA=",
+      "last_login": null,
+      "first_name": "Semsudin",
+      "last_name": "Beso",
+      "username": "semso",
+      "email": "semso@mail.com",
+      "status": true
+    }
+  },
+  {
+    "model": "user_management_app.user",
+    "pk": 3,
+    "fields": {
+      "password": "pbkdf2_sha256$390000$4w5Fs4OWsn3CQ9Pdcjh7zY$s0MYhap2MDnsRxP0KuW04mlomqcrv+IRl4tpktaUgnQ=",
+      "last_login": null,
+      "first_name": "Ahmed",
+      "last_name": "Ahmic",
+      "username": "ahmo",
+      "email": "ahmo@mail.com",
+      "status": true
+    }
+  },
+  {
+    "model": "user_management_app.user",
+    "pk": 4,
+    "fields": {
+      "password": "pbkdf2_sha256$390000$c6LI27XDKRE67JPJMww5q1$J/6DWpX8luHUfV27JVmq5dQmEI7xLLzxIcToLDYuX70=",
+      "last_login": null,
+      "first_name": "Anes",
+      "last_name": "Ahmic",
+      "username": "anes",
+      "email": "anes@mail.com",
+      "status": true
+    }
+  },
+  {
+    "model": "user_management_app.user",
+    "pk": 5,
+    "fields": {
+      "password": "pbkdf2_sha256$390000$WhlKsMEq5Eg5DjNx8Sa8fA$BzLyc8eOWJNDVcAQ2Dmdniedl4RKwXAMmxfgQthx2zo=",
+      "last_login": null,
+      "first_name": "Neko",
+      "last_name": "Neki",
+      "username": "neko",
+      "email": "neko@mail.com",
+      "status": true
+    }
+  },
+  {
+    "model": "user_management_app.user",
+    "pk": 6,
+    "fields": {
+      "password": "pbkdf2_sha256$390000$vpkeLueg2cngrr4RWEM9lX$MLg9bi0fVpfp0loqjIEvAKNzAHSv7GGQEJC2nE0B9pU=",
+      "last_login": null,
+      "first_name": "Elmedin",
+      "last_name": "Bisic",
+      "username": "elmedin556",
+      "email": "elmedin@mail.com",
+      "status": true
+    }
+  },
+  {
+    "model": "user_management_app.user",
+    "pk": 7,
+    "fields": {
+      "password": "pbkdf2_sha256$390000$C2gGRWWSi0VTTQU5w9c8eK$Go5Yax8I1UM3cyic9AOmIjeIdt2j548BTZOVwu8OspY=",
+      "last_login": null,
+      "first_name": "Ilma",
+      "last_name": "Fetic",
+      "username": "ilma889",
+      "email": "ilma@mail.com",
+      "status": true
+    }
+  },
+  {
+    "model": "user_management_app.user",
+    "pk": 8,
+    "fields": {
+      "password": "pbkdf2_sha256$390000$hPAtAvsePe2ZZxBhOYfPVj$9nwS3hu6jQSZo5plb1KbGGnUJiDRUZV1PDKhYXf/7OU=",
+      "last_login": null,
+      "first_name": "Vesna",
+      "last_name": "Prosic",
+      "username": "vesna123",
+      "email": "vesna@mail.com",
+      "status": true
+    }
+  },
+  {
+    "model": "user_management_app.user",
+    "pk": 9,
+    "fields": {
+      "password": "pbkdf2_sha256$390000$LXBdZCxRMctHrz6qs4ftDQ$ksEybzg2KhXq+Axa4Ej8hmiIw3pxb87bbD0uF7Sl5+g=",
+      "last_login": null,
+      "first_name": "Una",
+      "last_name": "Graso",
+      "username": "una34",
+      "email": "una@mail.com",
+      "status": true
+    }
+  },
+  {
+    "model": "user_management_app.user",
+    "pk": 10,
+    "fields": {
+      "password": "pbkdf2_sha256$390000$SSFgLxqKFiGKcd2Bclhady$CZmZ96AA5aSUrGCI64ovVXI5M/VrnITdfjF6CYvO96E=",
+      "last_login": null,
+      "first_name": "Ajna",
+      "last_name": "Ismic",
+      "username": "ajna667",
+      "email": "ajna@mail.com",
+      "status": true
+    }
+  },
+  {
+    "model": "user_management_app.user",
+    "pk": 11,
+    "fields": {
+      "password": "pbkdf2_sha256$390000$mt3OZR25vcmcxJdMPcUibx$Gf3/z4ePwk9w7AU8XK4qZp/gCdaWXFgIZkjV+uxUxeg=",
+      "last_login": null,
+      "first_name": "Enes",
+      "last_name": "Mulic",
+      "username": "enes990",
+      "email": "enes@mail.com",
+      "status": true
+    }
+  },
+  {
+    "model": "user_management_app.user",
+    "pk": 12,
+    "fields": {
+      "password": "pbkdf2_sha256$390000$tYT1luEUduMBXebLaSGZ2H$8PadzdIS1vvYm9U+u5ts4pJcY/aY3uBha09ArQRrBGk=",
+      "last_login": null,
+      "first_name": "Nedim",
+      "last_name": "Ahmic",
+      "username": "ahmic44",
+      "email": "nedim@mail.com",
+      "status": true
+    }
+  },
+  {
+    "model": "user_management_app.user",
+    "pk": 13,
+    "fields": {
+      "password": "pbkdf2_sha256$390000$0F2XxPdmtUSxKPO44qWGXz$rQRH1Ca8HsZrsrGk54FsAEFPaRderhli7R829ZxeaHU=",
+      "last_login": null,
+      "first_name": "Ziad",
+      "last_name": "Husic",
+      "username": "husic55",
+      "email": "ziad@mail.com",
+      "status": true
+    }
+  },
+  {
+    "model": "user_management_app.user",
+    "pk": 14,
+    "fields": {
+      "password": "pbkdf2_sha256$390000$bhdoH8ntdhTmeMTJVnZk2t$fT5r8VlOOcmNej85/1+5TPm9n7A95+V/AFZ0cIgMsR0=",
+      "last_login": null,
+      "first_name": "Hafsa",
+      "last_name": "Beso",
+      "username": "hafsa444",
+      "email": "hafsa@mail.com",
+      "status": true
+    }
+  },
+  {
+    "model": "user_management_app.user",
+    "pk": 15,
+    "fields": {
+      "password": "pbkdf2_sha256$390000$d853cSZgUnNNy3fnziUeCi$iF3e7RNt7P9wCCux+tnq1do8hKqH75pLbXkBAUsUVMY=",
+      "last_login": null,
+      "first_name": "Jusuf",
+      "last_name": "Omic",
+      "username": "omic556",
+      "email": "jusuf@mail.com",
+      "status": true
+    }
+  }
+]
