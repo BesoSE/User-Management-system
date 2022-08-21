@@ -1,4 +1,5 @@
 import {Col, Container, Row} from "react-bootstrap"
+import Link from "next/link";
 
 const NavBar = () => {
 
@@ -9,7 +10,7 @@ const NavBar = () => {
             <Container fluid={true}>
                 <Row className="border-top p-3">
                     <Col className="text-light" md={12} sm={12}>
-                        User Management System
+                       <Link href={'/'} > User Management System </Link>
                     </Col>
 
                 </Row>

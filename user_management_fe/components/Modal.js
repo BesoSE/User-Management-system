@@ -12,7 +12,7 @@ const Modal = ({showModal, setShowModal, deleteUser}) => {
                                 </div>
 
                                 <div className="modal-footer">
-                                    <button onClick={(e) => setShowModal(null)} type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close
+                                    <button onClick={(e) => setShowModal(null)} type="button" className="btn btn-secondary" data-bs-dismiss="modal">No
                                     </button>
                                     <button onClick={(e) => deleteUser(showModal)} type="button" className="btn btn-primary m-2">Yes</button>
                                 </div>

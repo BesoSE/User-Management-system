@@ -2,6 +2,7 @@ import userAPI from "../http/users";
 import UserTable from "./UserTable";
 import {useEffect, useState} from "react";
 import Modal from "./Modal";
+import Router from 'next/router'
 
 const Home = () => {
     const [users, setUsers] = useState([]);
@@ -28,9 +29,9 @@ const Home = () => {
         }, [])
 
     return (
-        <div className="container" style={{marginTop: '10vh'}}>
+        <div className="container" style={{marginTop: '10vh', marginBottom: '10vh'}}>
             <Modal showModal={showModal} setShowModal={setShowModal} deleteUser={deleteUser}/>
-            <button className="btn btn-primary">Create user</button>
+            <button className="btn btn-primary" onClick={()=>{Router.push("/createuser")}}>Create user</button>
             <UserTable users={users} data={data}  setShowModal={setShowModal}/>
         </div>
     )

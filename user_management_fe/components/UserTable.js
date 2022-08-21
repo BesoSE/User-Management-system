@@ -1,3 +1,5 @@
+import Router from "next/router";
+
 const UserTable = ({data, users, setShowModal}) => {
 
     return (
@@ -25,7 +27,7 @@ const UserTable = ({data, users, setShowModal}) => {
                             <td>{user.email}</td>
                             <td>{user.status.toString()}</td>
                             <td>
-                                <button className="btn btn-primary m-2">Edit</button>
+                                <button className="btn btn-primary m-2" onClick={()=>{Router.push(`/edituser/${user.id}`)}}>Edit</button>
                                 <button onClick={() => setShowModal(user.id)}  className="btn btn-danger m-2" >Delete</button>
 
 
