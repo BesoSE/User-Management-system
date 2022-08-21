@@ -106,17 +106,29 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 POSTGRES_DB_NAME = env("POSTGRES_DB_NAME")
+POSTGRES_NAME = env("POSTGRES_NAME")
 POSTGRES_USER = env("POSTGRES_USER")
 POSTGRES_PASSWORD = env("POSTGRES_PASSWORD")
 POSTGRES_HOST = env("POSTGRES_HOST")
 POSTGRES_PORT = env("POSTGRES_PORT")
 
-DATABASE_URL = f"postgres://{POSTGRES_USER}:{POSTGRES_PASSWORD}@{POSTGRES_HOST}:{POSTGRES_PORT}/{POSTGRES_DB_NAME}"
+
+# DATABASE_URL = f"postgres://{POSTGRES_USER}:{POSTGRES_PASSWORD}@{POSTGRES_HOST}:{POSTGRES_PORT}/{POSTGRES_DB_NAME}"
+#
+# DATABASES = {
+#     "default": env.db("DATABASE_URL", default=DATABASE_URL),
+# }
 
 DATABASES = {
-    "default": env.db("DATABASE_URL", default=DATABASE_URL),
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': POSTGRES_NAME,
+        'USER': POSTGRES_USER,
+        'PASSWORD': POSTGRES_PASSWORD,
+        'HOST': POSTGRES_HOST,
+        'PORT': POSTGRES_PORT,
+    }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
