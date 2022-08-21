@@ -29,9 +29,7 @@ const UserTable = ({data, users, setShowModal}) => {
                             <td>
                                 <button className="btn btn-primary m-2" onClick={()=>{Router.push(`/edituser/${user.id}`)}}>Edit</button>
                                 <button onClick={() => setShowModal(user.id)}  className="btn btn-danger m-2" >Delete</button>
-
-
-                                <button className="btn btn-dark m-2">Assign</button>
+                                <button className="btn btn-dark m-2" onClick={()=>{Router.push(`/assignpermissions/${user.id}`)}}>Assign</button>
                             </td>
 
                         </tr>

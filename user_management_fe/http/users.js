@@ -22,5 +22,11 @@ export default function userAPI() {
             ),
         getUser: async (id) =>
             getApiClient().get(`/api/user/${id}`),
+        getUserPermissions: async (id) =>
+            getApiClient().get(`/api/user/permission/${id}`),
+        deleteUserPermission: async (permission_id, id) =>
+            getApiClient().delete(`/api/user/permission/${id}/${permission_id}`),
+        addUserPermission: async (permission_id, id) =>
+            getApiClient().post(`/api/user/permission/${id}/${permission_id}`),
     }
 }

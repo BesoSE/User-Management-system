@@ -1,6 +1,6 @@
 import EditUserForm from "../../components/EditUserForm";
 
-export default function Id() {
+export default function EditUser() {
 
     return (
         <div>
