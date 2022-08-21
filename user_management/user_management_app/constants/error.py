@@ -8,6 +8,7 @@ INVALID_REQUEST = "invalidRequest"
 USER_DOESNT_EXIST = "userDoesnotExist"
 PERMISSION_DOESNT_EXIST = "permissionDoesnotExist"
 USER_OR_PERMISSION_DOESNT_EXIST = "userOrPermissionDoesnotExist"
+USER_PERMISSION_DOESNT_EXIST = "userPermissionDoesnotExist"
 
 
 
@@ -19,5 +20,7 @@ ERROR_OBJECTS = {
     PERMISSION_DOESNT_EXIST: (Error(PERMISSION_DOESNT_EXIST, _('Permission with provided id does not exist.')),
                            status.HTTP_404_NOT_FOUND),
     USER_OR_PERMISSION_DOESNT_EXIST: (Error(USER_OR_PERMISSION_DOESNT_EXIST, _('User or Permission with provided id does not exist.')),
+                           status.HTTP_404_NOT_FOUND),
+    USER_PERMISSION_DOESNT_EXIST: (Error(USER_PERMISSION_DOESNT_EXIST, _('UserPermission with provided ids does not exist.')),
                            status.HTTP_404_NOT_FOUND),
 }

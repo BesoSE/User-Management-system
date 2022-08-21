@@ -2,6 +2,7 @@ from rest_framework import serializers
 
 from user_management_app.models import User
 from user_management_app.models import UserPermissions
+from user_management_app.models import Permission
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -37,17 +38,25 @@ class UserEditSerializer(serializers.Serializer):
         model = User
 
 
-class UserPermissionSerializer(serializers.ModelSerializer):
+class AssignUserPermissionSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = UserPermissions
         fields = '__all__'
 
+
+class UserPermissionSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Permission
+        fields = '__all__'
+
     def to_representation(self, obj):
         data = super(UserPermissionSerializer, self).to_representation(obj)
-        data['first_name'] = obj.user.first_name
-        data['last_name'] = obj.user.last_name
-        data['code'] = obj.permission.code
-        data['description'] = obj.permission.description
+        user_permissions = self.context
+        if obj in user_permissions:
+            data['active'] = True
+        else:
+            data['active'] = False
         return data
 
